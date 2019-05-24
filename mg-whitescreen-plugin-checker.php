@@ -25,7 +25,7 @@ function mg_whitescreen_plugin_checker( $plugin_list ) {
 	// Check for the defiend GET parameter.
 	if( ! empty( $_GET[ MGWPC_GET_PARAMETER ] ) ):
 
-		print_r( '<p>Comenzando el análisis de los plugins</p>' );
+		print_r( '<p>Starting the plugins analysis.</p>' );
 
 		// Select the type of Testing.
 		switch ( $_GET[ MGWPC_GET_PARAMETER ] ):
@@ -46,7 +46,7 @@ function mg_whitescreen_plugin_checker( $plugin_list ) {
 		switch ( $_GET[ MGWPC_GET_PARAMETER ] ):
 			case 'complete':
 			case 'individually':
-				print_r( '<p>Test finalizado.</p>' );
+				print_r( '<p>Test completed.</p>' );
 				exit;
 		endswitch;
 
@@ -68,7 +68,7 @@ function mg_print_result( $http_code, $active_plugins ) {
 	if( $http_code != 200 ) {
 		$active_plugins = is_array( $active_plugins ) ? implode( ', ', $active_plugins ) : $active_plugins ;
 
-		print_r( '<div style="margin-bottom: 10px; background-color: #eee; padding: 1em;">El/los plugin(s) <b>' . $active_plugins . '</b> ha devuelto un código <b>HTTP ' . $http_code . '</b></div>' );
+		print_r( '<div style="margin-bottom: 10px; background-color: #eee; padding: 1em;">The plugin(s) <b>' . $active_plugins . '</b> has returned an HTTP code<b> ' . $http_code . '</b></div>' );
 	}
 }
 
